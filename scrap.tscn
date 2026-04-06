@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bq1lu12666o3g"]
+
+[ext_resource type="Script" uid="uid://dgycnqtcrshj2" path="res://scrap.gd" id="1_a3045"]
+[ext_resource type="Texture2D" uid="uid://bnrvqw2wvflix" path="res://icon.svg" id="1_ktp86"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b1l67"]
+radius = 42.426407
+
+[node name="Scrap" type="Area2D" unique_id=100706193]
+script = ExtResource("1_a3045")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=168920049]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_ktp86")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=853985953]
+shape = SubResource("CircleShape2D_b1l67")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

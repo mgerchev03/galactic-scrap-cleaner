@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dqsfyqoi5jjoh"]
+
+[ext_resource type="Script" uid="uid://crjuadi3iwdf5" path="res://main.gd" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://de4ksq2l07ta7" path="res://player.tscn" id="1_ig7tw"]
+
+[node name="Main" type="Node2D" unique_id=1175110132]
+script = ExtResource("1_0xm2m")
+
+[node name="Player" parent="." unique_id=1674606816 instance=ExtResource("1_ig7tw")]
+position = Vector2(562, 300)
+
+[node name="Timer" type="Timer" parent="." unique_id=1319161360]
+autostart = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1242264460]
+
+[node name="ScoreLabel" type="Label" parent="CanvasLayer" unique_id=1911026114]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Score: 0"
+
+[node name="LivesLabel" type="Label" parent="CanvasLayer" unique_id=115835525]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="GameOverLabel" type="Label" parent="CanvasLayer" unique_id=1250250831]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

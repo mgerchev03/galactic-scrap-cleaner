@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://crjuadi3iwdf5" path="res://main.gd" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://de4ksq2l07ta7" path="res://player.tscn" id="1_ig7tw"]
+[ext_resource type="Texture2D" uid="uid://dam3dn1fku2gh" path="res://Full_Hearth.png" id="3_h2yge"]
 
 [node name="Main" type="Node2D" unique_id=1175110132]
 script = ExtResource("1_0xm2m")
@@ -19,13 +20,57 @@ offset_right = 40.0
 offset_bottom = 23.0
 text = "Score: 0"
 
-[node name="LivesLabel" type="Label" parent="CanvasLayer" unique_id=115835525]
-offset_right = 40.0
-offset_bottom = 23.0
-
 [node name="GameOverLabel" type="Label" parent="CanvasLayer" unique_id=1250250831]
 visible = false
 offset_right = 40.0
 offset_bottom = 23.0
+
+[node name="UI" type="CanvasLayer" parent="CanvasLayer" unique_id=820465121]
+
+[node name="HealthBar" type="HBoxContainer" parent="CanvasLayer/UI" unique_id=610359335]
+anchors_preset = -1
+anchor_left = 0.96400005
+anchor_top = 0.024
+anchor_right = 0.96400005
+anchor_bottom = 0.024
+offset_left = -143.52808
+offset_top = -14.552
+offset_right = 38.471924
+offset_bottom = 19.448
+
+[node name="Hearth_1" type="TextureRect" parent="CanvasLayer/UI/HealthBar" unique_id=1224227775]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("3_h2yge")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Hearth_2" type="TextureRect" parent="CanvasLayer/UI/HealthBar" unique_id=2098758293]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("3_h2yge")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Hearth_3" type="TextureRect" parent="CanvasLayer/UI/HealthBar" unique_id=1895287053]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("3_h2yge")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Hearth_4" type="TextureRect" parent="CanvasLayer/UI/HealthBar" unique_id=237229167]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("3_h2yge")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Hearth_5" type="TextureRect" parent="CanvasLayer/UI/HealthBar" unique_id=550248415]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("3_h2yge")
+expand_mode = 1
+stretch_mode = 5
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

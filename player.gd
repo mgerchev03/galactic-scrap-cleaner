@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var speed = 550
+var speed = 400 # Тази стойност ще я променяме от main.gd
 
 func _physics_process(_delta):
 	var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")

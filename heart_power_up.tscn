@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://b744whi2lm7hs"]
+
+[ext_resource type="Script" uid="uid://b7qbftlxykuu" path="res://heart_power_up.gd" id="1_kq1sg"]
+[ext_resource type="Texture2D" uid="uid://dam3dn1fku2gh" path="res://Full_Hearth.png" id="1_paylm"]
+
+[node name="Area2D" type="Area2D" unique_id=1208143198]
+script = ExtResource("1_kq1sg")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=252928110]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_paylm")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=310330391]
+scale = Vector2(0.2, 0.2)
+build_mode = 1
+polygon = PackedVector2Array(-128, -66, -128, -3, -111, -3, -111, 16, -94, 16, -94, 34, -78, 34, -78, 51, -61, 51, -61, 69, -44, 69, -44, 87, -26, 87, -26, 105, 26, 105, 26, 87, 43, 87, 43, 69, 59, 69, 59, 51, 76, 51, 76, 33, 94, 33, 94, 15, 109, 15, 109, -2, 126, -3, 126, -66, 110, -66, 109, -84, 92, -84, 92, -102, 26, -102, 25, -84, 8, -84, 8, -66, -9, -66, -9, -84, -27, -84, -27, -102, -94, -102, -94, -84, -111, -84, -111, -67)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

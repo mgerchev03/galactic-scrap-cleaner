@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://b3i200ymcmypg"]
+
+[ext_resource type="Script" uid="uid://dgycnqtcrshj2" path="res://scrap.gd" id="1_8tvu5"]
+[ext_resource type="Texture2D" uid="uid://jdiccrhvm64b" path="res://Metal_Box.png" id="2_1sk7a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8tvu5"]
+size = Vector2(70, 70)
+
+[node name="Scrap" type="Area2D" unique_id=100706193]
+position = Vector2(0, 1)
+script = ExtResource("1_8tvu5")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=168920049]
+scale = Vector2(0.14, 0.14)
+texture = ExtResource("2_1sk7a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=853985953]
+shape = SubResource("RectangleShape2D_8tvu5")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

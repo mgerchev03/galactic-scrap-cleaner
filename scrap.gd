@@ -1,5 +1,21 @@
 extends Area2D
 
+var textures = [
+	preload("res://Metal_Box.png"),
+	preload("res://Satellite.png"),
+	preload("res://Asteroid.png"),
+]
+
+@onready var sprite = $Sprite2D # Увери се, че името съвпада с твоя Sprite възел
+
+func _ready():
+	# Избираме произволна картинка от списъка
+	if textures.size() > 0:
+		sprite.texture = textures[randi() % textures.size()]
+	
+	# Бонус: Можеш да ги караш да се въртят произволно за повече реализъм
+	rotation = randf_range(0, TAU)
+
 signal hit_player
 
 var speed = 350

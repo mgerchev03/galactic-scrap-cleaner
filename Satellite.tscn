@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://b8y411cpy1mre"]
+
+[ext_resource type="Script" uid="uid://dgycnqtcrshj2" path="res://scrap.gd" id="1_aqyoa"]
+[ext_resource type="Texture2D" uid="uid://mw1es136qr5c" path="res://Satellite.png" id="2_c26qr"]
+
+[node name="Scrap" type="Area2D" unique_id=100706193]
+script = ExtResource("1_aqyoa")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=168920049]
+scale = Vector2(0.14, 0.14)
+texture = ExtResource("2_c26qr")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1813671180]
+polygon = PackedVector2Array(-52, 4, -7, 4, -9, 15, -2, 16, -2, 22, 0, 22, 0, 16, 9, 16, 6, 4, 50, 4, 50, -8, 6, -9, 4, -35, -6, -35, -7, -9, -52, -9)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

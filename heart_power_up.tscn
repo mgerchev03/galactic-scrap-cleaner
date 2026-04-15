@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://b7qbftlxykuu" path="res://heart_power_up.gd" id="1_kq1sg"]
 [ext_resource type="Texture2D" uid="uid://dam3dn1fku2gh" path="res://Full_Hearth.png" id="1_paylm"]
 
-[node name="Area2D" type="Area2D" unique_id=1208143198]
+[node name="Area2D" type="Area2D" unique_id=1208143198 groups=["pickups"]]
 script = ExtResource("1_kq1sg")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=252928110]

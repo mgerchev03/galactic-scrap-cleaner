@@ -19,3 +19,13 @@ texture = ExtResource("2_onrkg")
 position = Vector2(4.999999, 1.5000012)
 scale = Vector2(0.1, 0.1)
 shape = SubResource("RectangleShape2D_onrkg")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1995712592]
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer" unique_id=2006228895]
+offset_left = 1586.0
+offset_top = 1022.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+max_value = 10.0
+value = 10.0

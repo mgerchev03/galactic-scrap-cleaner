@@ -6,8 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8tvu5"]
 size = Vector2(70, 70)
 
-[node name="Scrap" type="Area2D" unique_id=100706193]
-position = Vector2(0, 1)
+[node name="Scrap" type="Area2D" unique_id=100706193 groups=["enemies"]]
 script = ExtResource("1_8tvu5")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=168920049]

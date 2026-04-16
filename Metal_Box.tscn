@@ -3,10 +3,16 @@
 [ext_resource type="Script" uid="uid://dgycnqtcrshj2" path="res://scrap.gd" id="1_8tvu5"]
 [ext_resource type="Texture2D" uid="uid://jdiccrhvm64b" path="res://Metal_Box.png" id="2_1sk7a"]
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_8tvu5"]
+blend_mode = 1
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8tvu5"]
 size = Vector2(70, 70)
 
 [node name="Scrap" type="Area2D" unique_id=100706193 groups=["enemies"]]
+material = SubResource("CanvasItemMaterial_8tvu5")
+collision_layer = 2
+collision_mask = 3
 script = ExtResource("1_8tvu5")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=168920049]

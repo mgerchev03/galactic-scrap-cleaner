@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://bswshbyx0l4wt"]
+
+[ext_resource type="Script" uid="uid://dk5lhv3abe2cp" path="res://enemy.gd" id="1_4gyqm"]
+[ext_resource type="Texture2D" uid="uid://c1eydn2yheok1" path="res://explosion.png" id="2_4gyqm"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_qi2p4"]
+blend_mode = 1
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_4gyqm"]
+blend_mode = 1
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4gyqm"]
+size = Vector2(340, 316)
+
+[node name="Enemy" type="Area2D" unique_id=1170059809 groups=["enemies"]]
+material = SubResource("CanvasItemMaterial_qi2p4")
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_4gyqm")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=172993795]
+material = SubResource("CanvasItemMaterial_4gyqm")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_4gyqm")
+region_enabled = true
+region_rect = Rect2(293.666, 97.83366, 339.33334, 316)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=578125512]
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_4gyqm")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

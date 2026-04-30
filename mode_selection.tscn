@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://dxule5jc1v43v"]
+
+[ext_resource type="Script" uid="uid://6ev7owud7w87" path="res://mode_selection.gd" id="1_a3mlw"]
+
+[node name="ModeSelection" type="Control" unique_id=868861409]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a3mlw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1665198325]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -154.0
+offset_right = 250.0
+offset_bottom = 154.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameOneButton" type="Button" parent="VBoxContainer" unique_id=1962665922]
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 2
+text = "Game_1"
+
+[node name="GameTwoButton" type="Button" parent="VBoxContainer" unique_id=77364312]
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 2
+text = "Game_2"
+
+[node name="BackButton" type="Button" parent="VBoxContainer" unique_id=952392140]
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 2
+text = "Back"
+
+[connection signal="pressed" from="VBoxContainer/GameOneButton" to="." method="_on_game_one_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/GameTwoButton" to="." method="_on_game_two_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]

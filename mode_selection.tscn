@@ -30,16 +30,10 @@ custom_minimum_size = Vector2(500, 100)
 layout_mode = 2
 text = "Game_1"
 
-[node name="GameTwoButton" type="Button" parent="VBoxContainer" unique_id=77364312]
-custom_minimum_size = Vector2(500, 100)
-layout_mode = 2
-text = "Game_2"
-
 [node name="BackButton" type="Button" parent="VBoxContainer" unique_id=952392140]
 custom_minimum_size = Vector2(500, 100)
 layout_mode = 2
 text = "Back"
 
 [connection signal="pressed" from="VBoxContainer/GameOneButton" to="." method="_on_game_one_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/GameTwoButton" to="." method="_on_game_two_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]

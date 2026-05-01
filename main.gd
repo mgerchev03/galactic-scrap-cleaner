@@ -27,10 +27,13 @@ var is_invincible = false
 var heart_full = preload("res://Full_Hearth.png")
 var heart_empty = preload("res://Empty_Hearth.png")
 
+var can_restart = false # В началото не може да се рестартира
+
 @onready var timer = $Timer
 @onready var player = $Player
 @onready var score_label = $CanvasLayer/ScoreLabel
 @onready var go_label = $CanvasLayer/GameOverLabel
+@onready var name_input = $CanvasLayer/UI/NameInput
 
 func _ready():
 	Engine.time_scale = 1
@@ -41,7 +44,7 @@ func _ready():
 	update_health_ui(lives)
 
 func _process(_delta):
-	if is_game_over and Input.is_action_just_pressed("ui_accept"):
+	if is_game_over and can_restart and Input.is_action_just_pressed("ui_accept"):
 		get_tree().reload_current_scene()
 
 func update_health_ui(current_health: int):
@@ -135,14 +138,49 @@ func _on_scrap_dodged(scrap_node):
 		if player:
 			player.speed += 45
 
+func _on_player_died(): # Или както се казва твоята функция за край на играта
+	$UI/NameInput.show() # Това прави полето видимо
+	$GameOverLabel.show()
+	# Тук може да добавиш и спиране на времето или други неща
+
+func _input(event):
+	# Проверява дали е натиснат клавиша Escape
+	if event.is_action_pressed("ui_cancel"): 
+		# Проверяваме дали играта е приключила (is_game_over трябва да е true)
+		if is_game_over:
+			get_tree().change_scene_to_file("res://main_menu.tscn")
+
+func _on_name_input_text_submitted(new_text):
+	var p_name = new_text
+	if p_name == "": p_name = "Anonymous"
+	
+	# Изпращаме точките
+	SilentWolf.Scores.save_score(p_name, score, "main")
+	
+	# Вече използваме променливата, която дефинирахме горе
+	%NameInput.visible = false
+	
+	go_label.text = "Score saved for " + p_name + "!\nPress ENTER to Restart\nPress ESC for Main Menu"
+	
+	await get_tree().create_timer(0.2).timeout
+	can_restart = true
+
 func game_over():
 	is_game_over = true
+	can_restart = false # НОВО: Забраняваме рестарта веднага
 	timer.stop()
 	
+	if score_label:
+		score_label.visible = false
+		
 	if go_label:
-		go_label.text = "GAME OVER\nPress SPACE to Restart"
+		go_label.text = "GAME OVER\nScore: " + str(score) + "\nType your name and press ENTER"
+		go_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 		go_label.set_anchors_and_offsets_preset(Control.PRESET_CENTER)
 		go_label.visible = true
+		
+	$CanvasLayer/NameInput.visible = true
+	$CanvasLayer/NameInput.grab_focus() 
 	
 	if player:
 		player.set_process(false)

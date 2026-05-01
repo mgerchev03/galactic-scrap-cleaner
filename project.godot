@@ -15,12 +15,26 @@ run/main_scene="uid://cjudlunyhor41"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+SilentWolf="*uid://d220p5i1ao0ja"
+
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/silent_wolf/plugin.cfg")
+
+[importer_defaults]
+
+animation_library={
+&"import_script/path": "uid://d220p5i1ao0ja"
+}
 
 [input]
 

@@ -77,6 +77,12 @@ texture = ExtResource("3_h2yge")
 expand_mode = 1
 stretch_mode = 5
 
+[node name="NameInput" type="LineEdit" parent="CanvasLayer" unique_id=726654791]
+unique_name_in_owner = true
+visible = false
+offset_right = 68.5
+offset_bottom = 31.0
+
 [node name="WorldBoundaries" type="StaticBody2D" parent="." unique_id=118362793]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBoundaries" unique_id=1932894211]
@@ -99,3 +105,4 @@ rotation = 1.5707964
 shape = SubResource("WorldBoundaryShape2D_h2yge")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="text_submitted" from="CanvasLayer/NameInput" to="." method="_on_name_input_text_submitted"]

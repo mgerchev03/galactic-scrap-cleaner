@@ -1,9 +1,14 @@
 extends Control
 
-@onready var credits_panel = %Panel 
+@onready var credits_panel = %Panel
 @onready var main_buttons = $VBoxContainer
 
 func _ready():
+	SilentWolf.config.api_key = "InwGhWT5Nn2pbuC3iQsAE3jQb4fGv54AaEfuF2Xw"
+	SilentWolf.config.game_id = "galacticscrapcleaner"
+	SilentWolf.config.log_level = 1
+	print("SilentWolf е конфигуриран!")
+	
 	credits_panel.hide()
 
 func _on_credits_button_pressed():

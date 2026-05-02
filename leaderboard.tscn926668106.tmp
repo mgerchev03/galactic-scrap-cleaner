@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://d1swy3rbm0qvu"]
+
+[ext_resource type="Script" uid="uid://b8ie4wqxvagiq" path="res://leaderboard.gd" id="1_3ilyb"]
+
+[node name="leaderboard" type="Control" unique_id=1474866404]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3ilyb")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=757925804]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ItemList" type="ItemList" parent="." unique_id=1298915745]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1000, 500)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -50.0
+offset_right = 250.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="." unique_id=15251799]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -63.25
+offset_top = -82.0
+offset_right = 63.25
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 40
+text = "Close"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

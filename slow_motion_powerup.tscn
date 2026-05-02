@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cfr5f46dm6f5i"]
+
+[ext_resource type="Script" uid="uid://b1n1dqsawvstc" path="res://slow_motion_powerup.gd" id="1_1g66w"]
+[ext_resource type="Texture2D" uid="uid://d3bpxi0fiylmq" path="res://slow_motion.png" id="2_spylh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w1wq7"]
+radius = 24.020824
+
+[node name="slow_motion_powerup" type="Area2D" unique_id=2066926001]
+script = ExtResource("1_1g66w")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=325538728]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_spylh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=343743187]
+shape = SubResource("CircleShape2D_w1wq7")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

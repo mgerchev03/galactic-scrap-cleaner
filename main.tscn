@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://crjuadi3iwdf5" path="res://main.gd" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://de4ksq2l07ta7" path="res://player.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://cfr5f46dm6f5i" path="res://slow_motion_powerup.tscn" id="2_1bvp3"]
 [ext_resource type="Texture2D" uid="uid://dam3dn1fku2gh" path="res://Full_Hearth.png" id="3_h2yge"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_h2yge"]
@@ -10,6 +11,7 @@ distance = -649.0008
 
 [node name="Main" type="Node2D" unique_id=1175110132]
 script = ExtResource("1_0xm2m")
+slow_motion_powerup = ExtResource("2_1bvp3")
 
 [node name="Player" parent="." unique_id=1674606816 instance=ExtResource("1_ig7tw")]
 position = Vector2(562, 300)
@@ -20,14 +22,33 @@ autostart = true
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1242264460]
 
 [node name="ScoreLabel" type="Label" parent="CanvasLayer" unique_id=1911026114]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 62.0
+offset_bottom = 24.0
 text = "Score: 0"
 
 [node name="GameOverLabel" type="Label" parent="CanvasLayer" unique_id=1250250831]
 visible = false
-offset_right = 40.0
-offset_bottom = 23.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="TimeLabel" type="Label" parent="CanvasLayer" unique_id=207455746]
+offset_left = 1.0
+offset_top = 25.0
+offset_right = 57.0
+offset_bottom = 48.0
+text = "Time: 0"
 
 [node name="UI" type="CanvasLayer" parent="CanvasLayer" unique_id=820465121]
 
@@ -80,8 +101,19 @@ stretch_mode = 5
 [node name="NameInput" type="LineEdit" parent="CanvasLayer" unique_id=726654791]
 unique_name_in_owner = true
 visible = false
-offset_right = 68.5
-offset_bottom = 31.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -34.25
+offset_top = -15.5
+offset_right = 34.25
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [node name="WorldBoundaries" type="StaticBody2D" parent="." unique_id=118362793]
 

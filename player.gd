@@ -12,13 +12,16 @@ var nuke_ready = true
 
 func _physics_process(delta: float) -> void:
 	# 1. Движение
+	# get_vector автоматично се справя с диагоналите (напр. Нагоре + Надясно)
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	
 	if direction != Vector2.ZERO:
 		velocity = direction * speed
+		# Това завърта героя към посоката на движение
 		var target_angle = direction.angle()
 		rotation = lerp_angle(rotation, target_angle, rotation_speed * delta)
 	else:
+		# Плавно спиране
 		velocity = velocity.move_toward(Vector2.ZERO, speed * delta * 5)
 	
 	move_and_slide()

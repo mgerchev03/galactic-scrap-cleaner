@@ -21,6 +21,7 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="ItemList" type="ItemList" parent="." unique_id=1298915745]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(1000, 500)
 layout_mode = 1
 anchors_preset = 8
